@@ -35,3 +35,20 @@ textarea{
     background-color:#e7e7e7;
     height: 1.5em;
 }
+small{
+    display: block;
+    margin-top: 2em;
+    background-color: rgb(88, 80, 80);
+    padding-top: 1em;
+    padding-bottom: 1em;
+    font-weight: 600;
+    width: 100%;
+    text-align: center;
+}
+.green{
+    color: green;
+    
+}
+.red{
+    color: red;
+}
