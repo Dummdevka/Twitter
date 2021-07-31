@@ -34,6 +34,6 @@
         </textarea>
         <button type="submit" name="tweet-submit" class="btn btn-submit">Submit!</button>
     </form>
-   <button type="button" class="btn btn-redirect" onclick="window.location='../twitter/tweets.php'">See my twits</button>
+   <button type="button" class="btn btn-redirect" onclick="window.location='index.php?tweets=show'">See my twits</button>
 </body>
 </html>

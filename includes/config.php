@@ -1,5 +1,5 @@
 <?php
-define("BASEDIR", "E:\\xampp\\htdocs\\twitter");
+define("BASEDIR", __DIR__ . "/../");
 // Connection data
 $host = 'localhost';
 $user = 'root';

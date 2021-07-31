@@ -1,13 +1,13 @@
 <?php
 //Db connection
 include 'config.php';
-
+define("BASEURL", "Location:http://localhost/twitter/index.php");
 //Checking whether there is something written
 if(!strlen(trim($_POST['tweet']))){
 
     //Redirecting without saving the tweet
 
-    header ("Location:http://localhost/twitter/submit.php?error=empty");
+    header (BASEURL . "?tweets=submit&&error=empty");
 } else{
 
     //Save the tweet 
@@ -19,5 +19,5 @@ if(!strlen(trim($_POST['tweet']))){
 
     //Redirecting with success
     
-    header ("Location:http://localhost/twitter/submit.php?success");
+    header (BASEURL . "?tweets=submit&&success");
 }
