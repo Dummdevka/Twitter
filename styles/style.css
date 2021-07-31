@@ -35,6 +35,11 @@ textarea{
     background-color:#e7e7e7;
     height: 1.5em;
 }
+.btn-redirect{
+    margin-top: 2em;
+    width: 60%;
+    margin-left: 20%;
+}
 small{
     display: block;
     margin-top: 2em;
@@ -45,10 +50,36 @@ small{
     width: 100%;
     text-align: center;
 }
+.singleTweet{
+    width: 60%;
+    margin-left: 20%;
+    height: fit-content;
+    padding: 1em;
+    background-color: rgb(88, 80, 80);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 3em;
+}
+.btn-delete{
+    height: 80%;
+    width: 4em;
+    background-color: #999;
+    border-radius: 12px;
+    margin-left: 1em;
+}
 .green{
     color: green;
     
 }
 .red{
     color: red;
+}
+.primary{
+    color: cornflowerblue;
+}
+.grey{
+    color: #888;
+    font-size: 0.7em;
+    margin-bottom: 1em;
 }

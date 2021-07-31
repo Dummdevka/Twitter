@@ -1,8 +1,14 @@
 <?php
+//Db connection 
 include "config.php";
-include "data.php";
-$sql = "USE Twitter";
-$pdo->exec($sql);
-$select = "SELECT * FROM tweets WHERE id = 1";
-$stmt = $pdo->exec($select);
-print_r($stmt);
+
+//Query to the Db
+$select = "SELECT * FROM tweets";
+$stmt = $pdo->prepare($select);
+$response = $stmt->execute();
+
+//Fetch the results
+
+$res = $stmt->fetchAll();
+
+

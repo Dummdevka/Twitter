@@ -9,6 +9,9 @@
 </head>
 <body>
 <?php
+
+// Show an error/success notification 
+
         if(isset ($_GET['success'])){
             ?>
             <small class="green">Successfully posted!</small>
@@ -23,6 +26,8 @@
             }
         }
     ?>
+
+    
     <form action="includes/post-tweet.php" method="post">
         <h1>Submit your Tweet!</h1>
         <textarea name="tweet" id="tweet" cols="30" rows="10" placeholder="Write your tweet here...">
