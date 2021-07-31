@@ -13,12 +13,8 @@ if(!strlen(trim($_POST['tweet']))){
 
     //Save the tweet 
 
-    $tweet = $_POST['tweet'];
-    $sql = "INSERT INTO tweets (tweet) VALUES (?)";
-    $stmt = $pdo->prepare($sql);
-    $stmt->execute([$tweet]);
 
     //Redirecting with success
-    
+
     header (BASEURL . "?tweets=submit&&success");
 }
