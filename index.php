@@ -1,32 +1,42 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles/style.css">
-    <title>Twitter</title>
-</head>
-<body>
-    <?php
-        define("URL", "http://localhost/twitter/pages/");
+<?php
 
-        if(isset($_GET['tweets']) ){
-            if($_GET['tweets']=="submit"){
-                
-                require "pages/submit.php";
-            }
-            if($_GET['tweets']=="show"){
-                
-                require "pages/tweets.php";
-            }
-        } else{
-            
-            require "pages/submit.php";
-        }
-        
+// Set up a couple of base defines for our app!
+define("BASEDIR", __DIR__);
+define("TEMPLATEDIR", BASEDIR . '/views/');
+define("URL", "http://localhost/twitter/");
 
-        
-    ?>
-</body>
-</html>
+// Require the necessary files
+require_once __DIR__ . '/includes/db.php';
+require_once __DIR__ . '/includes/templater.php';
+
+// Define some routing (including default routing for index)
+$routes = [
+    'index',
+    'submit',
+    'view',
+    'delete',
+];
+
+$route = strtolower($_GET['page'] ?? 'index');
+
+if ( !in_array($route, $routes) ) {
+    $route = 'index';
+}
+
+try {
+    // Grab the controller and all other requirements (db & templater)
+    $host = 'localhost';
+    $user = 'user';
+    $pass = 'password';
+
+    $db = new Twitter_PDO($host, $user, $pass);
+    $templater = new Templater(TEMPLATEDIR);
+    require_once BASEDIR . '/controllers/' . $route . '.php';
+    $controller = new $route($db, $templater);
+
+    // Run the app =]
+    $controller->run();
+} catch (Exception $e) {
+    http_response_code($e->getCode());
+    $templater->view('error', ['exception'=>$e]);
+}
