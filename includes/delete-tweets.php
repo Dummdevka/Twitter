@@ -1,6 +1,8 @@
 <?php
 
 //Db connection 
-include "config.php";
+include_once 'config.php';
+include_once 'dbCreate.php';
 
 //Check the value
+

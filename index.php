@@ -13,15 +13,15 @@
 
         if(isset($_GET['tweets']) ){
             if($_GET['tweets']=="submit"){
-                //header("Location:" . URL . "submit.php");
+                
                 require "pages/submit.php";
             }
             if($_GET['tweets']=="show"){
-                //header("Location:" . URL . "show.php");
+                
                 require "pages/tweets.php";
             }
         } else{
-            //header("Location:" . URL . "submit.php");
+            
             require "pages/submit.php";
         }
         

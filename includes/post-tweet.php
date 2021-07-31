@@ -1,6 +1,7 @@
 <?php
 //Db connection
-include 'config.php';
+include_once 'config.php';
+include_once 'dbCreate.php';
 define("BASEURL", "Location:http://localhost/twitter/index.php");
 //Checking whether there is something written
 if(!strlen(trim($_POST['tweet']))){

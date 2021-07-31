@@ -1,6 +1,7 @@
 <?php
 //Db connection 
-include "config.php";
+include_once 'config.php';
+include_once 'dbCreate.php';
 
 //Query to the Db
 $select = "SELECT * FROM tweets";
